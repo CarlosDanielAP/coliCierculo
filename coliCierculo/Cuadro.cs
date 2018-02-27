@@ -24,7 +24,7 @@ namespace coliCierculo
             Aba = 0;
         }
 
-        public void Imprime(punto a, punto b)
+        public void Imprime(punto a, punto b, punto color)
         {
             Der = a.x + b.x;
             Izq = a.x;
@@ -36,6 +36,7 @@ namespace coliCierculo
             GL.Vertex2(b.x, a.y);
             GL.Vertex2(b.x, b.y);
             GL.Vertex2(a.x, b.y);
+            GL.Color3(color.x, color.y, color.z);
             GL.End();
         }
 

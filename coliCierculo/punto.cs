@@ -19,16 +19,18 @@ namespace coliCierculo
             _z = 0;
         }
 
-        public punto(double CoordX, double CoordY)
+        public punto(double CoordX, double CoordY, double CoordZ)
         {
             _x = CoordY;
             _y = CoordX;
+            _z = CoordZ;
         }
 
-        public void valores(double CoordX, double CoordY)
+        public void valores(double CoordX, double CoordY,double CoordZ)
         {
             _x = CoordY;
             _y = CoordX;
+            _z = CoordZ;
         }
 
         public double x
@@ -41,6 +43,11 @@ namespace coliCierculo
         {
             set { _y = value; }
             get { return _y; }
+        }
+        public double z
+        {
+            set { _z = value; }
+            get { return _z; }
         }
     }
 }
