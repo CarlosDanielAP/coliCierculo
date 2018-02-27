@@ -1,0 +1,9 @@
+c:\users\carlos.ahuactzin\documents\visual studio 2013\Projects\coliCierculo\coliCierculo\bin\Debug\coliCierculo.exe.config
+c:\users\carlos.ahuactzin\documents\visual studio 2013\Projects\coliCierculo\coliCierculo\bin\Debug\coliCierculo.exe
+c:\users\carlos.ahuactzin\documents\visual studio 2013\Projects\coliCierculo\coliCierculo\bin\Debug\coliCierculo.pdb
+c:\users\carlos.ahuactzin\documents\visual studio 2013\Projects\coliCierculo\coliCierculo\bin\Debug\OpenTK.dll
+c:\users\carlos.ahuactzin\documents\visual studio 2013\Projects\coliCierculo\coliCierculo\bin\Debug\OpenTK.pdb
+c:\users\carlos.ahuactzin\documents\visual studio 2013\Projects\coliCierculo\coliCierculo\bin\Debug\OpenTK.xml
+c:\users\carlos.ahuactzin\documents\visual studio 2013\Projects\coliCierculo\coliCierculo\obj\Debug\coliCierculo.csprojResolveAssemblyReference.cache
+c:\users\carlos.ahuactzin\documents\visual studio 2013\Projects\coliCierculo\coliCierculo\obj\Debug\coliCierculo.exe
+c:\users\carlos.ahuactzin\documents\visual studio 2013\Projects\coliCierculo\coliCierculo\obj\Debug\coliCierculo.pdb
