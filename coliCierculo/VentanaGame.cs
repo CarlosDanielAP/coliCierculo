@@ -17,7 +17,13 @@ namespace coliCierculo
         {
 
         }
+        {
+            base.OnLoad(e);
 
+            GL.LoadIdentity();
+            GL.MatrixMode(MatrixMode.Projection);
+            GL.Ortho(0, 10, 0, 10, -1, 1);
+        }
         protected override void OnUpdateFrame(FrameEventArgs e)
         {
             base.OnUpdateFrame(e);
@@ -26,14 +32,7 @@ namespace coliCierculo
 
         }
 
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-
-            GL.LoadIdentity();
-            GL.MatrixMode(MatrixMode.Projection);
-            GL.Ortho(0, 10, 0, 10, -1, 1);
-        }
+        
 
         protected override void OnRenderFrame(FrameEventArgs e)
         {
