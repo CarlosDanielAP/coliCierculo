@@ -26,6 +26,11 @@ namespace coliCierculo
 
         public void Imprime(punto a, punto b)
         {
+            Der = a.x + b.x;
+            Izq = a.x;
+            Arriba = a.y + b.y;
+            Abajo = a.y;
+
             GL.Begin(PrimitiveType.Quads);
             GL.Vertex2(a.x, a.y);
             GL.Vertex2(b.x, a.y);
