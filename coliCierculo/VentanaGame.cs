@@ -11,6 +11,9 @@ namespace coliCierculo
 {
     class VentanaGame:GameWindow
     {
+        Cuadro cuadrito = new Cuadro();
+        punto primer = new punto(0, 0);
+        punto segundo = new punto(1, 1);
 
         public VentanaGame(int ancho, int alto)
             : base(ancho, alto)
@@ -38,6 +41,8 @@ namespace coliCierculo
         protected override void OnRenderFrame(FrameEventArgs e)
         {
             base.OnRenderFrame(e);
+
+            cuadrito.Imprime(primer, segundo);
 
             this.SwapBuffers();
         }
