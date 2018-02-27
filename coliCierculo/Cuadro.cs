@@ -11,6 +11,18 @@ namespace coliCierculo
 {
     class Cuadro
     {
+        double Der;
+        double Izq;
+        double Arriba;
+        double Abajo;
+
+        public Cuadro()
+        {
+            Der = 0;
+            Izq = 0;
+            Arriba = 0;
+            Abajo = 0;
+        }
 
         public void Imprime(punto a, punto b)
         {
