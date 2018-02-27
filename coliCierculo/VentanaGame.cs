@@ -17,6 +17,8 @@ namespace coliCierculo
         punto segundo = new punto(1, 1);
         punto tres = new punto(5, 5);
         punto cuatro = new punto(4, 4);
+        Colision colisionador= new Colision();
+
         public VentanaGame(int ancho, int alto)
             : base(ancho, alto)
         {
@@ -71,7 +73,9 @@ namespace coliCierculo
 
             cuadrito.Imprime(primer, segundo);
             cuadrito2.Imprime(tres, cuatro);
-
+            colisionador.checarcolision(cuadrito, cuadrito2);
+              
+            
             this.SwapBuffers();
         }
 

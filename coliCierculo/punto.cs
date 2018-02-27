@@ -10,11 +10,13 @@ namespace coliCierculo
     {
         private double _x;
         private double _y;
+        private double _z;
 
         public punto()
         {
             _x = 0;
             _y = 0;
+            _z = 0;
         }
 
         public punto(double CoordX, double CoordY)
