@@ -23,12 +23,12 @@ namespace coliCierculo
             {
                 return false;
             }
-            if (a.Abajo >= b.Arriba)
+            if (a.Abajo <= b.Arriba)
             {
                 return false;
             }
 
-            if (a.Arriba <= b.Abajo)
+            if (a.Arriba >= b.Abajo)
             {
                 return false;
             }

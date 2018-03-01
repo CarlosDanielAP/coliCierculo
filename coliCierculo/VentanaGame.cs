@@ -17,7 +17,7 @@ namespace coliCierculo
         punto segundo = new punto(1, 1,0);
         punto tres = new punto(5, 5,0);
         punto cuatro = new punto(4, 4,0);
-        punto color1 = new punto(0f, 0f, 0f);
+        punto color1 = new punto(0.5f, 1f, 1f);
         punto color2= new punto(1f,1f,1f);
         Colision colisionador= new Colision();
 
@@ -37,20 +37,26 @@ namespace coliCierculo
                       segundo.x = primer.x + 1;
                       if (colisionador.checarcolision(cuadrito, cuadrito2))
                       {
-                          color1.valores(0f, 0f, 0f);
+                          color2.valores(0f, 0f, 0f);
                       }
+                      else
+                      {
+                          color2.valores(1f, 1f, 1f);
+                      }
+
+
                       break;
                   case 'a':
                       primer.x -= 0.1;
                       segundo.x = primer.x + 1;
                       if (colisionador.checarcolision(cuadrito, cuadrito2))
                       {
-                          color1.valores(0f, 0f, 0f);
+                          color2.valores(0f, 0f, 0f);
                       }
 
                       else
                       {
-                          color1.valores(1f, 1f, 1f);
+                          color2.valores(1f, 1f, 1f);
                       }
                       break;
                   case 'w':
@@ -58,11 +64,11 @@ namespace coliCierculo
                       segundo.y = primer.y + 1;
                       if (colisionador.checarcolision(cuadrito, cuadrito2))
                       {
-                          color1.valores(0f, 0f, 0f);
+                          color2.valores(0f, 0f, 0f);
                       }
                       else
                       {
-                          color1.valores(1f, 1f, 1f);
+                          color2.valores(1f, 1f, 1f);
                       }
                       break;
                   case 's':
@@ -70,11 +76,11 @@ namespace coliCierculo
                       segundo.y = primer.y + 1;
                       if (colisionador.checarcolision(cuadrito, cuadrito2))
                       {
-                          color1.valores(0f, 0f, 0f);
+                          color2.valores(0f, 0f, 0f);
                       }
                       else
                       {
-                          color1.valores(1f, 1f, 1f);
+                          color2.valores(1f, 1f, 1f);
                       }
                       break;
               
@@ -103,8 +109,8 @@ namespace coliCierculo
             base.OnRenderFrame(e);
 
             cuadrito.Imprime(primer, segundo,color1);
-            cuadrito2.Imprime(tres, cuatro,color2);
-            colisionador.checarcolision(cuadrito, cuadrito2);
+            cuadrito2.Imprime(tres, cuatro, color2);
+         
               
             
             this.SwapBuffers();
