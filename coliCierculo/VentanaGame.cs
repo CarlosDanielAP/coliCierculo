@@ -15,8 +15,10 @@ namespace coliCierculo
         Cuadro cuadrito2 = new Cuadro();
         punto primer = new punto(0, 0,0);
         punto segundo = new punto(1, 1,0);
-        punto tres = new punto(5, 5,0);
-        punto cuatro = new punto(4, 4,0);
+
+        punto tres = new punto(4, 4,0);
+        punto cuatro = new punto(5, 5,0);
+
         punto color1 = new punto(0f, 0f, 0f);
         punto color2= new punto(1f,1f,1f);
         Colision colisionador= new Colision();
@@ -33,16 +35,14 @@ namespace coliCierculo
               switch (e.KeyChar)
               {
                   case 'd':
-                      primer.x += 0.1;
-                      segundo.x = primer.x + 1;
+                     
                       if (colisionador.checarcolision(cuadrito, cuadrito2))
                       {
                           color1.valores(0f, 0f, 0f);
                       }
                       break;
                   case 'a':
-                      primer.x -= 0.1;
-                      segundo.x = primer.x + 1;
+                     
                       if (colisionador.checarcolision(cuadrito, cuadrito2))
                       {
                           color1.valores(0f, 0f, 0f);
@@ -54,8 +54,7 @@ namespace coliCierculo
                       }
                       break;
                   case 'w':
-                      primer.y += 0.1;
-                      segundo.y = primer.y + 1;
+                      
                       if (colisionador.checarcolision(cuadrito, cuadrito2))
                       {
                           color1.valores(0f, 0f, 0f);
@@ -66,8 +65,7 @@ namespace coliCierculo
                       }
                       break;
                   case 's':
-                      primer.y -= 0.1;
-                      segundo.y = primer.y + 1;
+                      
                       if (colisionador.checarcolision(cuadrito, cuadrito2))
                       {
                           color1.valores(0f, 0f, 0f);
@@ -105,8 +103,11 @@ namespace coliCierculo
             cuadrito.Imprime(primer, segundo,color1);
             cuadrito2.Imprime(tres, cuatro,color2);
             colisionador.checarcolision(cuadrito, cuadrito2);
-              
-            
+
+           
+            segundo.y = primer.y + 1;
+
+
             this.SwapBuffers();
         }
 
