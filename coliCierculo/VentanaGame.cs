@@ -15,17 +15,15 @@ namespace coliCierculo
         Cuadro cuadrito2 = new Cuadro();
         punto primer = new punto(0, 0,0);
         punto segundo = new punto(1, 1,0);
-<<<<<<< HEAD
 
-        punto tres = new punto(4, 4,0);
-        punto cuatro = new punto(5, 5,0);
 
-        punto color1 = new punto(0f, 0f, 0f);
-=======
+        
+
+
         punto tres = new punto(5, 5,0);
         punto cuatro = new punto(4, 4,0);
         punto color1 = new punto(0.5f, 1f, 1f);
->>>>>>> 5f6478af98e7ab7433855c48ea187c02fd779b9d
+
         punto color2= new punto(1f,1f,1f);
         Colision colisionador= new Colision();
 
@@ -113,7 +111,7 @@ namespace coliCierculo
             base.OnRenderFrame(e);
 
             cuadrito.Imprime(primer, segundo,color1);
-<<<<<<< HEAD
+
             cuadrito2.Imprime(tres, cuatro,color2);
             colisionador.checarcolision(cuadrito, cuadrito2);
 
@@ -121,12 +119,11 @@ namespace coliCierculo
             segundo.y = primer.y + 1;
 
 
-=======
             cuadrito2.Imprime(tres, cuatro, color2);
          
               
             
->>>>>>> 5f6478af98e7ab7433855c48ea187c02fd779b9d
+
             this.SwapBuffers();
         }
 
