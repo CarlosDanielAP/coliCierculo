@@ -12,8 +12,13 @@ namespace coliCierculo
     class VentanaGame:GameWindow
     {
         Cuadro cuadrito = new Cuadro();
-        punto primer = new punto(0, 0);
-        punto segundo = new punto(1, 1);
+        circulo bola = new circulo();
+
+        punto uno = new punto();
+        punto color = new punto();
+        double r = 1;
+
+        
 
         public VentanaGame(int ancho, int alto)
             : base(ancho, alto)
@@ -42,7 +47,7 @@ namespace coliCierculo
         {
             base.OnRenderFrame(e);
 
-            cuadrito.Imprime(primer, segundo);
+            bola.dibuja(uno, 1, uno);
 
             this.SwapBuffers();
         }
