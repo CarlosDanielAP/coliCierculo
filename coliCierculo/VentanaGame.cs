@@ -14,7 +14,7 @@ namespace coliCierculo
         Cuadro cuadrito = new Cuadro();
         circulo bola = new circulo();
 
-        punto uno = new punto();
+        punto uno = new punto(5,5,0);
         punto color = new punto();
         double r = 1;
 
@@ -47,7 +47,7 @@ namespace coliCierculo
         {
             base.OnRenderFrame(e);
 
-            bola.dibuja(uno, 1, uno);
+            bola.dibuja(uno, r, color);
 
             this.SwapBuffers();
         }
