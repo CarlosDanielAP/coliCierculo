@@ -7,3 +7,14 @@ c:\users\carlos.ahuactzin\documents\visual studio 2013\Projects\coliCierculo\col
 c:\users\carlos.ahuactzin\documents\visual studio 2013\Projects\coliCierculo\coliCierculo\obj\Debug\coliCierculo.csprojResolveAssemblyReference.cache
 c:\users\carlos.ahuactzin\documents\visual studio 2013\Projects\coliCierculo\coliCierculo\obj\Debug\coliCierculo.exe
 c:\users\carlos.ahuactzin\documents\visual studio 2013\Projects\coliCierculo\coliCierculo\obj\Debug\coliCierculo.pdb
+C:\Users\Carly\Documents\graficacion\coliCierculo\coliCierculo\bin\Debug\coliCierculo.exe.config
+C:\Users\Carly\Documents\graficacion\coliCierculo\coliCierculo\bin\Debug\coliCierculo.exe
+C:\Users\Carly\Documents\graficacion\coliCierculo\coliCierculo\bin\Debug\coliCierculo.pdb
+C:\Users\Carly\Documents\graficacion\coliCierculo\coliCierculo\bin\Debug\OpenTK.dll
+C:\Users\Carly\Documents\graficacion\coliCierculo\coliCierculo\bin\Debug\OpenTK.pdb
+C:\Users\Carly\Documents\graficacion\coliCierculo\coliCierculo\bin\Debug\OpenTK.xml
+C:\Users\Carly\Documents\graficacion\coliCierculo\coliCierculo\bin\Debug\OpenTK.dll.config
+C:\Users\Carly\Documents\graficacion\coliCierculo\coliCierculo\obj\Debug\coliCierculo.csprojResolveAssemblyReference.cache
+C:\Users\Carly\Documents\graficacion\coliCierculo\coliCierculo\obj\Debug\coliCierculo.csproj.CoreCompileInputs.cache
+C:\Users\Carly\Documents\graficacion\coliCierculo\coliCierculo\obj\Debug\coliCierculo.exe
+C:\Users\Carly\Documents\graficacion\coliCierculo\coliCierculo\obj\Debug\coliCierculo.pdb
