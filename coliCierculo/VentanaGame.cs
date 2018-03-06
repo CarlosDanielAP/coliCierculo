@@ -47,7 +47,12 @@ namespace coliCierculo
         {
             base.OnRenderFrame(e);
 
-            bola.dibuja(uno, r, color);
+           
+            for (float i = 0; i <= 15; i++)
+            {
+                uno.valores(5, i, 0);
+                bola.dibuja(uno, r, color);
+            }
 
             this.SwapBuffers();
         }
