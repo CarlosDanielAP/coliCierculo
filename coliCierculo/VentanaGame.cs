@@ -11,14 +11,20 @@ namespace coliCierculo
 {
     class VentanaGame:GameWindow
     {
-        Cuadro cuadrito = new Cuadro();
+        Cuadro player1 = new Cuadro();
+        Cuadro player2 = new Cuadro();
         circulo bola = new circulo();
 
         punto uno = new punto(5,5,0);
-        punto color = new punto();
+        punto p1One = new punto(7, 2, 1);
+        punto p1Two = new punto(1, 1, 1);
+        punto p2One = new punto(7, 10, 1);
+        punto p2Two = new punto(1, 9, 1);
+        punto color = new punto(0,0,0);
+        Colision col = new Colision();
         double r = 1;
 
-        
+   
 
         public VentanaGame(int ancho, int alto)
             : base(ancho, alto)
@@ -47,7 +53,21 @@ namespace coliCierculo
         {
             base.OnRenderFrame(e);
 
+
+
+            col.playersCol(player1, player2, bola);
+
+            if (!col.P1col)
+            {
+                uno.x -= 0.1f;
+            }
+           
+         
+         
+
             bola.dibuja(uno, r, color);
+            player1.Imprime(p1One,p1Two);
+            player2.Imprime(p2One, p2Two);
 
             this.SwapBuffers();
         }
