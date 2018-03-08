@@ -13,42 +13,55 @@ namespace coliCierculo
 
         public Colision()
         {
+            p1col = false;
+            p2col = false;
           
         }
 
 
 
         public void playersCol(Cuadro player1, Cuadro player2, circulo pelota) {
-            if (player1.Derecha >= pelota.Centro)
+
+
+
+            if (pelota.Centro >= player2.Izquierda)
+            {
+                p2col = true;
+
+            }
+            else
+                p2col = false;
+
+
+            if (pelota.Centro <= player1.Izquierda )
             {
                 p1col = true;
+
             }
             else
                 p1col = false;
-
-            if (player1.Derecha >= pelota.Centro)
-            {
-                p1col = true;
-            }
-            else
-                p1col = false;
-           
-           
-
-        
-        
         }
 
-        public bool checarcolision(Cuadro player1,Cuadro player2, circulo pelota)
+        public bool checarcolision(Cuadro player,circulo pelota)
         {
 
-            if (pelota.Centro >= player1.Derecha)
+            if (pelota.Centro >= player.Derecha)
             {
                 
                 
                 return false;
             }
             
+           
+
+
+            if (pelota.Centro <= player.Izquierda)
+            {
+
+
+                return false;
+            }
+
             return true;
         }
 
@@ -59,6 +72,8 @@ namespace coliCierculo
         {
             get { return p1col; }
         }
+
+      
         public bool P2col
         {
             get { return p2col; }

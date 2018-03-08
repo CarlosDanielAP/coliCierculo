@@ -13,16 +13,28 @@ namespace coliCierculo
     {
         Cuadro player1 = new Cuadro();
         Cuadro player2 = new Cuadro();
+        Cuadro obstacle = new Cuadro();
+
         circulo bola = new circulo();
 
         punto uno = new punto(5,5,0);
         punto p1One = new punto(7, 2, 1);
         punto p1Two = new punto(1, 1, 1);
-        punto p2One = new punto(7, 10, 1);
-        punto p2Two = new punto(1, 9, 1);
+        
+        
+        
+        punto p2One = new punto(7, 7, 1);
+        punto p2Two = new punto(1, 8, 1);
+
+        punto obsOne = new punto(5,5,1);
+        punto obsTwo = new punto(4,4,1);
+        
         punto color = new punto(0,0,0);
         Colision col = new Colision();
-        double r = 1;
+
+       
+        bool players=true;
+        double r = 0.1;
 
    
 
@@ -55,19 +67,37 @@ namespace coliCierculo
 
 
 
-            col.playersCol(player1, player2, bola);
-
-            if (!col.P1col)
+            if (!players)
             {
-                uno.x -= 0.1f;
-            }
+                if (!col.checarcolision(player1, bola))
+                {
+                    uno.x -= 0.1;
+
+                }
+                else
+                    players = true;
+              }
            
-         
-         
+           if (players)
+            {
+                if (!col.checarcolision(player2, bola))
+                {
+                    uno.x += 0.1;
+
+                }
+                else
+                    players = false;
+            }
+
+
+            
+            
+            //col.playersCol(player1, player2, bola);
 
             bola.dibuja(uno, r, color);
             player1.Imprime(p1One,p1Two);
             player2.Imprime(p2One, p2Two);
+            obstacle.Imprime(obsOne, obsTwo);
 
             this.SwapBuffers();
         }
