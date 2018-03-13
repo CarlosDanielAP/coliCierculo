@@ -34,7 +34,7 @@ namespace coliCierculo
 
        
         bool players=true;
-        double r = 0.1;
+        double r = 0.5;
 
    
 
@@ -42,6 +42,21 @@ namespace coliCierculo
             : base(ancho, alto)
         {
 
+        }
+
+        protected override void OnKeyPress(KeyPressEventArgs e)
+        {
+            base.OnKeyPress(e);
+            switch (e.KeyChar)
+            {
+                case 'w':
+                    obsOne.y += 0.1;
+                    break;
+                     case 's':
+                    obsOne.y -= 0.1;
+                    break;
+
+            }
         }
         protected override void OnLoad(EventArgs e)
         {
@@ -90,7 +105,7 @@ namespace coliCierculo
             }
 
 
-            
+           obsTwo.y = obsOne.y + 1;
             
             //col.playersCol(player1, player2, bola);
 
