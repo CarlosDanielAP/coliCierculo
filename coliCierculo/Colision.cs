@@ -24,7 +24,7 @@ namespace coliCierculo
 
 
 
-            if (pelota.Centro >= player2.Izquierda)
+            if (pelota.Derecha >= player2.Izquierda)
             {
                 p2col = true;
 
@@ -33,7 +33,7 @@ namespace coliCierculo
                 p2col = false;
 
 
-            if (pelota.Centro <= player1.Izquierda )
+            if (pelota.Derecha <= player1.Izquierda )
             {
                 p1col = true;
 
@@ -45,22 +45,41 @@ namespace coliCierculo
         public bool checarcolision(Cuadro player,circulo pelota)
         {
 
-            if (pelota.Centro >= player.Derecha)
+            if (pelota.Derecha <= player.Izquierda)
             {
-                
-                
+
+
+                return false;
+            }
+            if (pelota.Izquierda >= player.Derecha)
+            {
+
+
+                return false;
+            }
+
+            if (pelota.Arriba <= player.Abajo)
+            {
+
+
+                return false;
+            }
+
+
+            if (pelota.Abajo >= player.Arriba)
+            {
+
+
                 return false;
             }
             
-           
 
 
-            if (pelota.Centro <= player.Izquierda)
-            {
 
 
-                return false;
-            }
+
+
+
 
             return true;
         }

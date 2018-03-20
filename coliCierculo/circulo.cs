@@ -11,15 +11,24 @@ namespace coliCierculo
 {
     class circulo
     {
-        double cent;
+        double Der;
+        double Izq;
+        double Arr;
+        double Aba;
         public circulo(){
-            cent = 0;
+            Der = 0;
+            Izq = 0;
+            Arr = 0;
+            Aba = 0;
 
         }
 
         public void dibuja(punto a, double radio,punto color)
         {
-            cent = a.x;
+            Der = a.x + radio;
+            Izq = a.x - radio;
+            Arr = a.y + radio;
+            Aba = a.y - radio;
 
 
             GL.Begin(PrimitiveType.Polygon);
@@ -32,9 +41,21 @@ namespace coliCierculo
             GL.End();
         }
 
-        public double Centro
+        public double Derecha
         {
-            get { return cent; }
+            get { return Der; }
+        }
+        public double Izquierda
+        {
+            get { return Izq; }
+        }
+        public double Arriba
+        {
+            get { return Arr; }
+        }
+        public double Abajo
+        {
+            get { return Aba; }
         }
     }
 }

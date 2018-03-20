@@ -16,6 +16,7 @@ namespace coliCierculo
         double Izq;
         double Arr;
         double Aba;
+        double med;
 
         public Cuadro()
         {
@@ -23,14 +24,20 @@ namespace coliCierculo
             Izq = 0;
             Arr = 0;
             Aba = 0;
+            med = 0;
         }
 
         public void Imprime(punto a, punto b)
         {
-            Der = a.x + b.x;
+            /*Der = a.x + b.x;
             Izq = a.x;
             Arr = a.y + b.y;
+            Aba = a.y;*/
+            Der = a.x+b.x;
+            Izq = a.x;
+            Arr = a.y+b.y;
             Aba = a.y;
+            med = Arr / 2;
 
             GL.Begin(PrimitiveType.Quads);
             GL.Vertex2(a.x, a.y);
@@ -54,6 +61,10 @@ namespace coliCierculo
         public double Abajo
         {
             get { return Aba; }
+        }
+        public double Medio
+        {
+            get { return med; }
         }
     }
 }
