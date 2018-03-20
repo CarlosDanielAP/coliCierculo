@@ -190,13 +190,16 @@ namespace coliCierculo
             {
                 Console.WriteLine("punto para p1");
                 Console.ReadKey();
-                uno.x = 0;
-                uno.y = 0;
+                uno.x = 5;
+                uno.y = 5;
              
             }
             if (bola.Izquierda <= -1)
             {
                 Console.WriteLine("punto para p2");
+                Console.ReadKey();
+                uno.x = 5;
+                uno.y = 5;
             }
 
 
