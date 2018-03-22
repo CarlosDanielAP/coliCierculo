@@ -12,7 +12,7 @@ namespace coliCierculo
         {
 
             VentanaGame screen = new VentanaGame(600, 500);
-            screen.Title = "Mi Primer Cuadro";
+            screen.Title = "SuperPong100%RealNoFake";
             screen.Run();
         }
     }

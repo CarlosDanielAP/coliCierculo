@@ -33,6 +33,7 @@ namespace coliCierculo
         punto color = new punto(1,1,1);
         punto color2 = new punto(0, 0, 0);
         Colision col = new Colision();
+        
 
         int p1=0;
         int p2 = 0;
@@ -40,7 +41,8 @@ namespace coliCierculo
         bool startgame = false;
         bool derecha=true;
         bool arriba = true;
-        double r = 0.1;
+        bool gameover = false;
+        double r = 0.5;
 
    
 
@@ -90,6 +92,7 @@ namespace coliCierculo
                 case ' ':
                     //Console.WriteLine("spacebar");
                     startgame = true;
+                    gameover = false;
                     break;
 
             }
@@ -106,7 +109,7 @@ namespace coliCierculo
         {
             base.OnUpdateFrame(e);
             GL.Clear(ClearBufferMask.ColorBufferBit);
-            GL.ClearColor(0.5f, 0.5f, 1f, 1f);
+            GL.ClearColor(0f, 0f, 0f, 0f);
 
         }
 
@@ -117,8 +120,8 @@ namespace coliCierculo
             base.OnRenderFrame(e);
 
 
-
-
+            if(!gameover)
+            {
             if (startgame)
             {
 
@@ -207,7 +210,7 @@ namespace coliCierculo
                 }
 
 
-                if (bola.Derecha >= 11)
+                if (bola.Derecha >= 9.5)
                 {
                     p1++;
                     Console.Clear();
@@ -218,7 +221,7 @@ namespace coliCierculo
                     startgame = false;
                   
                 }
-                if (bola.Izquierda <= -1)
+                if (bola.Izquierda <= 0.5)
                 {
                     p2++;
                     Console.Clear();
@@ -228,6 +231,16 @@ namespace coliCierculo
                     uno.y = player2.Medio;
                     startgame = false;
                 }
+            }
+            }
+
+            if (p1 >= 5 || p2 >= 5)
+            {
+                Console.Clear();
+                Console.WriteLine("gameover");
+                p1 = 0;
+                p2 = 0;
+                gameover = true;
             }
 
 
