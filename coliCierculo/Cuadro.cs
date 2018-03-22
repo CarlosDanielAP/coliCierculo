@@ -29,10 +29,6 @@ namespace coliCierculo
 
         public void Imprime(punto a, punto b,punto color)
         {
-            /*Der = a.x + b.x;
-            Izq = a.x;
-            Arr = a.y + b.y;
-            Aba = a.y;*/
             Der = a.x+b.x;
             Izq = a.x;
             Arr = a.y+b.y;

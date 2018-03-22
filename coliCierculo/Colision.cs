@@ -73,14 +73,6 @@ namespace coliCierculo
                 return false;
             }
             
-
-
-
-
-
-
-
-
             return true;
         }
 

@@ -20,12 +20,12 @@ namespace coliCierculo
         punto uno = new punto(6,6,0);
 
         punto p1One = new punto(1, 0, 0);
-        punto p1Two = new punto(7, 1, 0);
+        punto p1Two = new punto(3, 1, 0);
         
         
         
         punto p2One = new punto(1, 9, 0);
-        punto p2Two = new punto(7, 10, 0);
+        punto p2Two = new punto(3, 10, 0);
 
         punto obsOne = new punto(0,5,0);
         punto obsTwo = new punto(10,5.5,0);
@@ -40,7 +40,7 @@ namespace coliCierculo
         bool startgame = false;
         bool derecha=true;
         bool arriba = true;
-        double r = 0.5;
+        double r = 0.1;
 
    
 
@@ -56,24 +56,35 @@ namespace coliCierculo
             switch (e.KeyChar)
             {
                 case 'w':
-                   p1One.y += 0.1;
-                  p1Two.y += 0.1;
+                    if (p1Two.y <= 10)
+                    {
+                        p1One.y += 0.1;
+                        p1Two.y += 0.1;
+                    }
 
                     break;
                     case 's':
-                   p1One.y -= 0.1;
-                  p1Two.y -= 0.1;
+                    if (p1One.y >=0)
+                    {
+                        p1One.y -= 0.1;
+                        p1Two.y -= 0.1;
+                    }
                     break;
 
 
                 case '8':
-                    p2One.y += 0.1;
-                    p2Two.y += 0.1;
-
+                    if (p2Two.y <= 10)
+                    {
+                        p2One.y += 0.1;
+                        p2Two.y += 0.1;
+                    }
                     break;
                 case '2':
-                    p2One.y -= 0.1;
-                    p2Two.y -= 0.1;
+                    if (p2One.y >= 0)
+                    {
+                        p2One.y -= 0.1;
+                        p2Two.y -= 0.1;
+                    }
                     break;
 
                 case ' ':
