@@ -27,7 +27,7 @@ namespace coliCierculo
             med = 0;
         }
 
-        public void Imprime(punto a, punto b)
+        public void Imprime(punto a, punto b,punto color)
         {
             /*Der = a.x + b.x;
             Izq = a.x;
@@ -40,6 +40,7 @@ namespace coliCierculo
             med = Arr / 2;
 
             GL.Begin(PrimitiveType.Quads);
+            GL.Color3(color.x, color.y, color.z);
             GL.Vertex2(a.x, a.y);
             GL.Vertex2(b.x, a.y);
             GL.Vertex2(b.x, b.y);

@@ -30,10 +30,14 @@ namespace coliCierculo
         punto obsOne = new punto(0,5,0);
         punto obsTwo = new punto(10,5.5,0);
         
-        punto color = new punto(0,0,0);
+        punto color = new punto(1,1,1);
+        punto color2 = new punto(0, 0, 0);
         Colision col = new Colision();
 
-       
+        int p1=0;
+        int p2 = 0;
+        
+        bool startgame = false;
         bool derecha=true;
         bool arriba = true;
         double r = 0.5;
@@ -72,6 +76,11 @@ namespace coliCierculo
                     p2Two.y -= 0.1;
                     break;
 
+                case ' ':
+                    //Console.WriteLine("spacebar");
+                    startgame = true;
+                    break;
+
             }
         }
         protected override void OnLoad(EventArgs e)
@@ -99,130 +108,125 @@ namespace coliCierculo
 
 
 
-
-
-            if (derecha)
+            if (startgame)
             {
 
-                if (!col.checarcolision(player2, bola) )
+                if (derecha)
                 {
-                    uno.x += 0.1;
-                    derecha = true;
-                    if (arriba)
+
+                    if (!col.checarcolision(player2, bola))
                     {
-                        uno.y += 0.1f;
-                        if (uno.y >= 10)
+                        uno.x += 0.1;
+                        derecha = true;
+                        if (arriba)
                         {
-                            arriba = false;
+                            uno.y += 0.1f;
+                            if (uno.y >= 10)
+                            {
+                                arriba = false;
+                            }
                         }
-                    }
-                    if (!arriba)
-                    {
-                        uno.y -= 0.1f;
-                        if (uno.y <= 0)
+                        if (!arriba)
                         {
-                            arriba = true;
+                            uno.y -= 0.1f;
+                            if (uno.y <= 0)
+                            {
+                                arriba = true;
+                            }
                         }
+
                     }
 
-                }
-
-                if (col.checarcolision(player2, bola))
-                {
-                    if (player2.Medio < uno.y)
+                    if (col.checarcolision(player2, bola))
                     {
-                        arriba = true;
-                    }
-                    if (player2.Medio > uno.y)
-                    {
-                        arriba = false;
-                    }
-
-                    derecha = false;
-                }
-               
-            }
-
-
-            if (!derecha)
-            {
-              
-                
-                if (!col.checarcolision(player1, bola) )
-                {
-                    uno.x -= 0.1;
-                    derecha = false;
-                    if (arriba)
-                    {
-                        uno.y += 0.1f;
-                        if (uno.y >= 10)
-                        {
-                            arriba = false;
-                        }
-                    }
-                    if (!arriba)
-                    {
-                        uno.y -= 0.1f;
-                        if (uno.y <= 0)
+                        if (player2.Medio < uno.y)
                         {
                             arriba = true;
                         }
+                        if (player2.Medio > uno.y)
+                        {
+                            arriba = false;
+                        }
+
+                        derecha = false;
                     }
 
                 }
-                if (col.checarcolision(player1, bola))
+
+
+                if (!derecha)
                 {
-                    if (player1.Medio < uno.y)
-                    {
-                        arriba = true;
-                    }
-                    if (player1.Medio > uno.y)
-                    {
-                        arriba = false;
-                    }
 
-                    derecha = true;
+
+                    if (!col.checarcolision(player1, bola))
+                    {
+                        uno.x -= 0.1;
+                        derecha = false;
+                        if (arriba)
+                        {
+                            uno.y += 0.1f;
+                            if (uno.y >= 10)
+                            {
+                                arriba = false;
+                            }
+                        }
+                        if (!arriba)
+                        {
+                            uno.y -= 0.1f;
+                            if (uno.y <= 0)
+                            {
+                                arriba = true;
+                            }
+                        }
+
+                    }
+                    if (col.checarcolision(player1, bola))
+                    {
+                        if (player1.Medio < uno.y)
+                        {
+                            arriba = true;
+                        }
+                        if (player1.Medio > uno.y)
+                        {
+                            arriba = false;
+                        }
+
+                        derecha = true;
+                    }
+                }
+
+
+                if (bola.Derecha >= 11)
+                {
+                    p1++;
+                    Console.Clear();
+                    Console.WriteLine("Marcador P1: {0} p2: {1}",p1,p2);
+                   
+                    uno.x =player1.Derecha+r;
+                    uno.y = player1.Medio;
+                    startgame = false;
+                  
+                }
+                if (bola.Izquierda <= -1)
+                {
+                    p2++;
+                    Console.Clear();
+                    Console.WriteLine("Marcador P1: {0} p2: {1}", p1, p2);
+
+                    uno.x = player2.Izquierda - r; ;
+                    uno.y = player2.Medio;
+                    startgame = false;
                 }
             }
-
-
-            if (bola.Derecha >= 11)
-            {
-                Console.WriteLine("punto para p1");
-                Console.ReadKey();
-                uno.x = 5;
-                uno.y = 5;
-             
-            }
-            if (bola.Izquierda <= -1)
-            {
-                Console.WriteLine("punto para p2");
-                Console.ReadKey();
-                uno.x = 5;
-                uno.y = 5;
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
             //col.playersCol(player1, player2, bola);
 
             bola.dibuja(uno, r, color);
-            player1.Imprime(p1One,p1Two);
-            player2.Imprime(p2One, p2Two);
-            obstacle.Imprime(obsOne, obsTwo);
+            player1.Imprime(p1One,p1Two,color);
+            player2.Imprime(p2One, p2Two,color);
+            obstacle.Imprime(obsOne, obsTwo,color);
 
 
             this.SwapBuffers();
